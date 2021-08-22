@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your token</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="column">
+      <h1>Your token</h1>
+      <div class="row">
+        <input type="text" id="clone" name="clone_token" />
+        <input
+          type="password"
+          id="tokenInput"
+          name="token"
+          placeholder="Insert token"
+        />
+        <img class="show" src="./eye.png" alt="images of eye" />
+      </div>
+      <div class="content-confirm">
+        <img src="./checked.png" alt="simple icon if checked" />
+        <span id="confirm-message"></span>
+      </div>
+      <div class="content-input">
+        <button class="btn" id="saveButton">Save</button>
+        <button class="btn" id="copyIt">Copy</button>
+      </div>
+    </div>
+  </body>
+  <script src="popup.js"></script>
+</html>

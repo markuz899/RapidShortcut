@@ -1,0 +1,79 @@
+html,
+body {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  background: #102b3f;
+}
+h1 {
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+#clone {
+  position: absolute;
+  z-index: -1;
+}
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.column .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.column .content-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.column .content-confirm {
+  margin-top: 10px;
+  display: none;
+  align-items: center;
+  color: white;
+}
+.column .content-confirm img {
+  width: 20px;
+  margin-right: 5px;
+}
+.show {
+  cursor: pointer;
+  width: 15px;
+  margin-left: 5px;
+  filter: invert(1);
+}
+.btn {
+  cursor: pointer;
+  margin: 0.5rem 0.5rem 0;
+  outline: none;
+  border: none;
+  color: #e5dc15;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 0;
+  color: white;
+}
+#saveButton {
+  display: none;
+  background: #99d98c;
+}
+#copyIt {
+  background: #168aad;
+  color: white;
+}
