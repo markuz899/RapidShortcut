@@ -11,7 +11,11 @@ h1 {
   text-align: center;
   margin: 0 0 0.5rem;
 }
-#clone {
+h1:last-of-type {
+  margin-top: 0.5rem;
+}
+#clone,
+#clone_bit {
   position: absolute;
   z-index: -1;
 }
@@ -69,11 +73,15 @@ h1 {
   top: 0;
   color: white;
 }
+.btn_copy {
+  margin-top: 0;
+}
 #saveButton {
   display: none;
   background: #99d98c;
 }
-#copyIt {
+#copyIt,
+#copyBit {
   background: #168aad;
   color: white;
 }

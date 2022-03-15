@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="column">
-      <h1>Your token</h1>
+      <h1>Your GIT token</h1>
       <div class="row">
         <input type="text" id="clone" name="clone_token" />
         <input
@@ -15,7 +15,20 @@
           name="token"
           placeholder="Insert token"
         />
-        <img class="show" src="./eye.png" alt="images of eye" />
+        <img id="eyeGit" class="show" src="./eye.png" alt="images of eye" />
+        <button class="btn btn_copy" id="copyIt">Copy</button>
+      </div>
+      <h1>Your BIT token</h1>
+      <div class="row">
+        <input type="text" id="clone_bit" name="clone_bit_butoken" />
+        <input
+          type="password"
+          id="tokenBitInput"
+          name="token_bit"
+          placeholder="Insert bit token"
+        />
+        <img id="eyeBit" class="show" src="./eye.png" alt="images of eye" />
+        <button class="btn btn_copy" id="copyBit">Copy</button>
       </div>
       <div class="content-confirm">
         <img src="./checked.png" alt="simple icon if checked" />
@@ -23,7 +36,6 @@
       </div>
       <div class="content-input">
         <button class="btn" id="saveButton">Save</button>
-        <button class="btn" id="copyIt">Copy</button>
       </div>
     </div>
   </body>
