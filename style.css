@@ -1,87 +1,129 @@
 html,
 body {
+  position: relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
   margin: 0;
   background: #102b3f;
+}
+.d-none {
+  display: none;
+}
+.d-none-visible {
+  visibility: hidden;
+}
+input {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px 2px;
+}
+input:disabled {
+  background: dimgrey;
+  color: linen;
+  opacity: 1;
+}
+button {
+  background: gray;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  margin: 5px 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-info {
+  background: #008cba;
+  color: black;
+}
+.btn-warning {
+  background: #e69f31;
+  color: black;
+}
+.btn-error {
+  background: #f44336;
+  color: black;
+}
+.btn-success {
+  background: #4caf50;
+  color: black;
 }
 h1 {
   font-size: 15px;
   color: white;
   text-align: center;
-  margin: 0 0 0.5rem;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
-h1:last-of-type {
-  margin-top: 0.5rem;
+.add-app {
+  border: none;
+  margin-top: 10px;
+  background: #008cba;
+  margin-bottom: 2px;
 }
-#clone,
-#clone_bit {
-  position: absolute;
-  z-index: -1;
-}
-.row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.column {
+.content {
   padding: 10px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
-.column .row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.content .services {
+  width: 100%;
+  color: #fff;
 }
-.column .content-input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.column .content-confirm {
+.content .content-app {
+  width: 100%;
   margin-top: 10px;
-  display: none;
-  align-items: center;
-  color: white;
+  display: flex;
+  flex-direction: column;
 }
-.column .content-confirm img {
-  width: 20px;
-  margin-right: 5px;
-}
-.show {
-  cursor: pointer;
-  width: 15px;
-  margin-left: 5px;
-  filter: invert(1);
-}
-.btn {
-  cursor: pointer;
-  margin: 0.5rem 0.5rem 0;
-  outline: none;
-  border: none;
-  color: #e5dc15;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  position: relative;
-  top: 0;
-  color: white;
-}
-.btn_copy {
+.content .content-app:first-of-type {
   margin-top: 0;
 }
-#saveButton {
-  display: none;
-  background: #99d98c;
+.content .content-app .content-app-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-#copyIt,
-#copyBit {
-  background: #168aad;
-  color: white;
+.content .content-app .content-app-row img {
+  width: 15px;
+}
+.content-create {
+  width: 100%;
+  margin-top: 10px;
+}
+.content-create-row {
+  display: flex;
+  flex-direction: column;
+}
+.save-service-button {
+  background: #4caf50;
+}
+.cancel-service-button {
+  background: #f44336;
+}
+.alert {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0078cd;
+}
+.alert.d-none {
+  display: none;
+}
+.alert p {
+  color: #fff;
 }
