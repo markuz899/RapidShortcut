@@ -155,10 +155,10 @@ document.addEventListener(
           btnSave.appendChild(iconSave);
 
           row.appendChild(input);
+          row.appendChild(btnSave);
           row.appendChild(btnShow);
           row.appendChild(btnCopy);
           row.appendChild(btnDelete);
-          row.appendChild(btnSave);
           app.appendChild(title);
           app.appendChild(row);
 
