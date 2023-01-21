@@ -1,4 +1,4 @@
-## Chrome extension
+## Chrome extension SHORTCUTTER
 
 ### Extension created for the sole purpose of speeding up the copying of tokens of various types
 

@@ -12,11 +12,13 @@ document.addEventListener(
       createService();
     });
 
-    const showAllert = (text, time) => {
+    const showAllert = (text, level, time) => {
+      alert.classList.add(level);
       alert.classList.remove("d-none");
       textAllert.innerHTML = text;
       setTimeout(() => {
         alert.classList.add("d-none");
+        alert.classList.remove(level);
       }, time);
     };
 
@@ -76,26 +78,30 @@ document.addEventListener(
         let serviceName = contentCreate.querySelector("#name");
         let serviceToken = contentCreate.querySelector("#service");
 
-        const localService = await getObjectFromLocalStorage("services");
+        if (serviceName.value !== "" && serviceToken.value !== "") {
+          const localService = await getObjectFromLocalStorage("services");
 
-        if (localService && localService.length) {
-          let res = JSON.parse(localService);
-          existServices = [...res];
+          if (localService && localService.length) {
+            let res = JSON.parse(localService);
+            existServices = [...res];
+          }
+
+          existServices.push({
+            serviceName: serviceName.value,
+            serviceToken: serviceToken.value,
+          });
+
+          await saveObjectInLocalStorage({
+            services: JSON.stringify(existServices),
+          });
+
+          addButton.classList.remove("d-none");
+          contentCreate.remove();
+          showAllert("Saved", "success", 1000);
+          loadServices();
+        } else {
+          showAllert("Please insert name and token", "warning", 1000);
         }
-
-        existServices.push({
-          serviceName: serviceName.value,
-          serviceToken: serviceToken.value,
-        });
-
-        await saveObjectInLocalStorage({
-          services: JSON.stringify(existServices),
-        });
-
-        addButton.classList.remove("d-none");
-        contentCreate.remove();
-        showAllert("Saved", 1000);
-        loadServices();
       });
 
       cancelButton.addEventListener("click", () => {
@@ -138,6 +144,7 @@ document.addEventListener(
           input.setAttribute("disabled", true);
 
           btnShow.classList.add("btn-info");
+          btnShow.classList.add("hide");
           btnShow.setAttribute("id", i);
           btnShow.appendChild(iconShow);
 
@@ -168,10 +175,12 @@ document.addEventListener(
             if (input.type === "password") {
               input.type = "text";
               input.disabled = false;
+              btnShow.classList.remove("hide");
               btnSave.classList.remove("d-none-visible");
             } else {
               input.type = "password";
               input.disabled = true;
+              btnShow.classList.add("hide");
               btnSave.classList.add("d-none-visible");
             }
           });
@@ -179,7 +188,7 @@ document.addEventListener(
           btnCopy.addEventListener("click", (ev) => {
             console.log(input.value);
             navigator.clipboard.writeText(input.value);
-            showAllert("Copy to clipboard", 500);
+            showAllert("Copy to clipboard", "warning", 500);
           });
 
           btnDelete.addEventListener("click", async () => {
@@ -190,7 +199,7 @@ document.addEventListener(
               await saveObjectInLocalStorage({
                 services: JSON.stringify(data),
               });
-              showAllert("Deleted", 500);
+              showAllert("Deleted", "error", 500);
               loadServices();
             }
           });
@@ -204,7 +213,7 @@ document.addEventListener(
               await saveObjectInLocalStorage({
                 services: JSON.stringify(res),
               });
-              showAllert("Saved", 1000);
+              showAllert("Saved", "success", 1000);
               loadServices();
             }
           });

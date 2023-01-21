@@ -19,6 +19,9 @@ input {
   padding: 5px 10px;
   margin: 5px 2px;
 }
+input:hover {
+  background: #b6b6b6;
+}
 input:disabled {
   background: dimgrey;
   color: linen;
@@ -40,23 +43,45 @@ button {
   justify-content: center;
 }
 .btn-info {
+  position: relative;
   background: #008cba;
   color: black;
+}
+.btn-info:hover {
+  background: #01ace4;
+}
+.btn-info.hide:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000000;
+  transform: rotate(320deg);
 }
 .btn-warning {
   background: #e69f31;
   color: black;
 }
+.btn-warning:hover {
+  background: #e3b873;
+}
 .btn-error {
   background: #f44336;
   color: black;
+}
+.btn-error:hover {
+  background: #f38e87;
 }
 .btn-success {
   background: #4caf50;
   color: black;
 }
+.btn-success:hover {
+  background: #7eae7f;
+}
 h1 {
   font-size: 15px;
+  font-family: monospace;
   color: white;
   text-align: center;
   margin-top: 0px;
@@ -78,6 +103,8 @@ h1 {
 .content .services {
   width: 100%;
   color: #fff;
+  max-height: 300px;
+  overflow: scroll;
 }
 .content .content-app {
   width: 100%;
@@ -119,7 +146,18 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.alert.info {
   background: #0078cd;
+}
+.alert.warning {
+  background: #e69f31;
+}
+.alert.success {
+  background: #4caf50;
+}
+.alert.error {
+  background: #f44336;
 }
 .alert.d-none {
   display: none;
