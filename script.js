@@ -154,6 +154,7 @@ document.addEventListener(
 
           btnDelete.classList.add("btn-error");
           btnDelete.setAttribute("id", i);
+          btnDelete.classList.add("d-none-visible");
           btnDelete.appendChild(iconDelete);
 
           btnSave.classList.add("btn-success");
@@ -163,9 +164,9 @@ document.addEventListener(
 
           row.appendChild(input);
           row.appendChild(btnSave);
+          row.appendChild(btnDelete);
           row.appendChild(btnShow);
           row.appendChild(btnCopy);
-          row.appendChild(btnDelete);
           app.appendChild(title);
           app.appendChild(row);
 
@@ -177,11 +178,13 @@ document.addEventListener(
               input.disabled = false;
               btnShow.classList.remove("hide");
               btnSave.classList.remove("d-none-visible");
+              btnDelete.classList.remove("d-none-visible");
             } else {
               input.type = "password";
               input.disabled = true;
               btnShow.classList.add("hide");
               btnSave.classList.add("d-none-visible");
+              btnDelete.classList.add("d-none-visible");
             }
           });
 
