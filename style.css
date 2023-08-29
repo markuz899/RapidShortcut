@@ -1,7 +1,7 @@
 html,
 body {
   position: relative;
-  width: 100%;
+  width: 350px;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -105,6 +105,9 @@ h1 {
   color: #fff;
   max-height: 300px;
   overflow: scroll;
+}
+.content .services::-webkit-scrollbar {
+  display: none;
 }
 .content .content-app {
   width: 100%;
