@@ -1,20 +1,22 @@
 {
-  "manifest_version": 2,
-
-  "name": "SHORTCUTTER",
-  "description": "Copy to clipboard shortcut",
-  "version": "1.0",
+  "manifest_version": 3,
+  "name": "Stash",
+  "description": "A quiet vault for the credentials you copy all day — search, reveal, copy.",
+  "version": "2.0",
   "author": "Markuz",
-  "browser_action": {
+  "action": {
+    "default_popup": "popup.html",
     "default_icon": "icon.png",
-    "default_popup": "index.html",
-    "default_title": "Rapid copy"
+    "default_title": "Stash"
   },
-  "permissions": [
-    "activeTab",
-    "unlimitedStorage",
-    "clipboardRead",
-    "clipboardWrite",
-    "storage"
-  ]
+  "icons": {
+    "128": "icon.png"
+  },
+  "permissions": ["storage"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "rapidshortcut@markuz",
+      "strict_min_version": "109.0"
+    }
+  }
 }

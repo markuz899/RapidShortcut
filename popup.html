@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stash</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main id="app">
+      <!-- list view -->
+      <section class="view" id="list-view">
+        <header class="bar">
+          <span class="bar-icon" aria-hidden="true"></span>
+          <input
+            id="search"
+            type="text"
+            placeholder="Search credentials"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="add" class="ghost" title="New credential" aria-label="New credential"></button>
+        </header>
+        <div id="entries" class="entries"></div>
+        <p id="empty" class="empty" hidden></p>
+        <footer class="list-foot">
+          <button id="export" class="text-btn">Export backup</button>
+          <button id="import" class="text-btn">Import backup</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden />
+        </footer>
+      </section>
+
+      <!-- add / edit view -->
+      <section class="view" id="form-view" hidden>
+        <header class="form-head">
+          <button id="cancel" class="ghost" title="Back" aria-label="Back"></button>
+          <h1 id="form-title">New credential</h1>
+        </header>
+        <input
+          id="entry-name"
+          class="name-input"
+          type="text"
+          placeholder="Name — e.g. ssh prod"
+          autocomplete="off"
+        />
+        <div id="form-fields" class="form-fields"></div>
+        <button id="add-field" class="add-field">Add field</button>
+        <footer class="form-foot">
+          <button id="save" class="primary">Save</button>
+        </footer>
+      </section>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
