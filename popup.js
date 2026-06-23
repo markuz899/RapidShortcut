@@ -181,6 +181,27 @@ function main() {
       ${I.chevron}`;
     head.addEventListener("click", () => el.classList.toggle("open"));
 
+    // quick-copy the first secret field straight from the list, no expand
+    const secretField = entry.fields.find((f) => looksSecret(f.label));
+    const row = document.createElement("div");
+    row.className = "entry-row";
+    row.appendChild(head);
+    if (secretField) {
+      const qc = mkIconBtn(I.copy, async (ev) => {
+        ev.stopPropagation();
+        await navigator.clipboard.writeText(secretField.value);
+        qc.innerHTML = I.check;
+        qc.classList.add("ok");
+        setTimeout(() => {
+          qc.innerHTML = I.copy;
+          qc.classList.remove("ok");
+        }, 900);
+      });
+      qc.className = "icon-btn quick-copy";
+      qc.title = `Copy ${secretField.label}`;
+      row.appendChild(qc);
+    }
+
     const body = document.createElement("div");
     body.className = "entry-body";
     const inner = document.createElement("div");
@@ -200,7 +221,7 @@ function main() {
     inner.appendChild(actions);
 
     body.appendChild(inner);
-    el.append(head, body);
+    el.append(row, body);
     return el;
   }
 

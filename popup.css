@@ -150,13 +150,32 @@ button {
   }
 }
 
+.entry-row {
+  display: flex;
+  align-items: center;
+}
+
 .entry-head {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   padding: 10px;
   text-align: left;
+}
+
+.quick-copy {
+  flex: none;
+  margin-right: 6px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.entry-row:hover .quick-copy,
+.quick-copy.ok,
+.quick-copy:focus-visible {
+  opacity: 1;
 }
 
 .entry-head:hover {
