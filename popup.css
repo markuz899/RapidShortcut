@@ -139,6 +139,9 @@ button {
   border-radius: var(--radius);
   background: var(--panel);
   overflow: hidden;
+  /* ponytail: don't let the flex column shrink entries — overflow:hidden zeroes
+     their auto min-size, so without this they squish to fit and the list won't scroll */
+  flex: none;
   animation: rise 0.28s ease both;
   animation-delay: calc(var(--i, 0) * 35ms);
 }
